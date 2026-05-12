@@ -35,6 +35,7 @@ def generer_employes(filiale, seed=42):
 
         employe = {
             "employee_id":   f"{filiale['id']}-EMP-{str(i+1).zfill(4)}",
+            "genre": random.choice(["M", "F"]),
             "subsidiary_id": filiale["id"],
             "country":       filiale["country"],
             "prenom":        fake.first_name(),

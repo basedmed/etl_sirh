@@ -50,6 +50,13 @@ def run_pipeline():
     print(f"Salaires : {len(df_sal_final)}")
     print(f"Absences : {len(df_abs_final)}")
 
+    # EXPORT CSV pour Power BI
+    os.makedirs("output", exist_ok=True)
+    df_emp_final.to_csv("output/employes.csv", index=False, encoding="utf-8-sig")
+    df_sal_final.to_csv("output/salaires.csv",  index=False, encoding="utf-8-sig")
+    df_abs_final.to_csv("output/absences.csv",  index=False, encoding="utf-8-sig")
+    print("CSV exportes -> output/")
+
 
 if __name__ == "__main__":
     run_pipeline()
